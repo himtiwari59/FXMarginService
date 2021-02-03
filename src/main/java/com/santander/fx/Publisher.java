@@ -22,7 +22,6 @@ public class Publisher implements Runnable {
             try {
                 String message = getNextTick();
                 messageBrokerQueue.put(message);
-                //System.out.println(String.format("Sent \n %s", message));
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null,e);

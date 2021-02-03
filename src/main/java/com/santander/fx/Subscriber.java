@@ -28,7 +28,6 @@ public class Subscriber implements Runnable {
         while (!Thread.currentThread().isInterrupted()){
             try {
                 String message = messageBrokerQueue.take();
-                //System.out.println(String.format("Received \n %s", message));
                 validate(message);
                 if(!atomicBoolean.get()){
                     System.out.println(String.format("Invalid Message %S", message));
